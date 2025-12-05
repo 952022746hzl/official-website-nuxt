@@ -34,7 +34,7 @@ const links = [
   },
   {
     label: '服务',
-    to: '#services'
+    to: '/services'
   },
   {
     label: '关于我们',
@@ -42,7 +42,7 @@ const links = [
   },
   {
     label: '联系我们',
-    to: '#contact'
+    to: '/contact'
   }
 ]
 </script>

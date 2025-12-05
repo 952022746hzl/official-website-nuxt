@@ -2,7 +2,7 @@
   <UFooter>
     <template #left>
       <div class="flex items-center gap-2">
-        <UIcon name="i-lucide-building-2" class="text-xl text-primary" />
+        <UIcon name="i-lucide-building-2" class=" text-primary" />
         <span class="font-semibold">{{ appConfig.site?.name  }}</span>
       </div>
     </template>
@@ -25,11 +25,11 @@
     </template>
 
     <template #bottom>
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="text-center space-y-3">
         <p class="text-sm text-gray-500 dark:text-gray-400">
           © {{ new Date().getFullYear() }} {{ appConfig.site?.name }}. 版权所有.
         </p>
-        <div class="flex gap-4">
+        <div class="flex justify-center gap-6">
           <ULink 
             to="#" 
             class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
