@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build": "nuxt build ",
+    "dev": "nuxt dev  --dotenv .env.development",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
@@ -14,10 +14,12 @@
     "@iconify-json/lucide": "^1.2.74",
     "@iconify-json/simple-icons": "^1.2.59",
     "@nuxt/ui": "^4.2.1",
+    "@nuxtjs/dotenv": "^1.4.2",
     "nuxt": "^4.2.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.10.0",
+    "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.1.5"
