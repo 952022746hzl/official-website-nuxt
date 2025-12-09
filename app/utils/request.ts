@@ -85,7 +85,22 @@ const request = async <T = any, R = any>(
         return
       }
 
-      // 业务错误，抛出错误
+      // 业务错误，在客户端显示错误提示
+      nextTick(() => {
+        try {
+          const toast = useToast()
+          toast.add({
+            description: responseData.msg || '请求失败',
+            color: 'error',
+            icon: 'i-heroicons-exclamation-circle'
+          })
+        } catch (e) {
+          // 如果 useToast 失败，至少输出到控制台
+          console.error('业务错误:', responseData.msg || '请求失败')
+        }
+      })
+      
+      // 抛出错误
       throw createError({
         statusCode: parseInt(responseData.code) || 500,
         statusMessage: responseData.msg || '请求失败',
@@ -106,9 +121,26 @@ const request = async <T = any, R = any>(
     // 优先使用响应体中的 msg，其次使用 message，最后使用默认错误信息
     const errorMessage = response?._data?.msg || response?._data?.message || error.message || '请求失败'
     
+    // 在客户端显示错误提示
+    nextTick(() => {
+      try {
+        const toast = useToast()
+        toast.add({
+          description: errorMessage,
+          color: 'error',
+          icon: 'i-heroicons-exclamation-circle'
+        })
+      } catch (e) {
+        console.error('请求错误:', errorMessage)
+      }
+    })
+    
+    
+    // 抛出错误
     throw createError({
       statusCode: response?.status || 500,
-      statusMessage: errorMessage
+      statusMessage: errorMessage,
+      data: response?._data
     })
   }
 

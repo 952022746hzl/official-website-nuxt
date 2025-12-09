@@ -3,6 +3,9 @@ export default defineAppConfig({
     colors: {
       primary: 'blue',
       neutral: 'slate'
+    },
+    notifications: {
+      position: 'top-right'
     }
   },
   // 网站基本信息

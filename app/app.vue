@@ -25,10 +25,13 @@ useSeoMeta({
   twitterImage: '/og-image.png',
   twitterCard: 'summary_large_image'
 })
+
+// 配置 toast 位置为右上角
+const toaster = { position: 'top-right' }
 </script>
 
 <template>
-  <UApp>
+  <UApp :toaster="toaster">
     <AppHeader />
 
     <UMain>
