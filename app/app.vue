@@ -1,4 +1,6 @@
 <script setup>
+import favicon from '~/assets/favicon.ico'
+
 const appConfig = useAppConfig()
 
 useHead({
@@ -6,7 +8,7 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: favicon }
   ],
   htmlAttrs: {
     lang: 'zh-CN'

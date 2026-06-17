@@ -2,8 +2,8 @@
   <UHeader>
     <template #left>
       <NuxtLink to="/" class="flex items-center gap-2 min-w-0">
-        <!--Logo png-->
-        <img src="@/assets/logo.png" alt="Logo" class="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
+        <!--Logo-->
+        <img :src="favicon" alt="Logo" class="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
         <span class="font-bold text-lg sm:text-xl truncate">{{ appConfig.site?.name }}</span>
       </NuxtLink>
     </template>
@@ -23,7 +23,6 @@
       <template v-else-if="links && links.length > 0">
         <UNavigationMenu :items="links" contentOrientation="vertical"/>
       </template>
-      <UColorModeButton />
     </template>
 
     <template #body>
@@ -49,6 +48,7 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
 import { useOfficialWebSiteNav } from '~/composables/useOfficialWebSiteNav';
+import favicon from '~/assets/favicon.ico';
 
 const appConfig = useAppConfig()
 

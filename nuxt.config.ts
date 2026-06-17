@@ -5,6 +5,11 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
+  // 关闭主题切换，固定为亮色主题
+  ui: {
+    colorMode: false
+  },
+
   devtools: {
     enabled: true
   },
